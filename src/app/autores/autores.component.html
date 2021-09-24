@@ -1,0 +1,20 @@
+
+<h1 class="mt-5 mb-5">Autores</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Nacionalidade</th>
+      <th>Gênero</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let autor of autores">
+      <td>{{autor.id}}</td>
+      <td>{{autor.nome}}</td>
+      <td>{{autor.nacionalidade}}</td>
+      <td>{{autor.genero}}</td>
+    </tr>
+  </tbody>
+</table>
