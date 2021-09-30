@@ -6,25 +6,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AutoresService {
+
+  private readonly API = 'http://localhost:8080/biblioteca/resources/autores';
+
   constructor(
     private httpClient: HttpClient,
   ) {}
 
   findAll() {
-    return this.httpClient.get<Autor[]>('http://localhost:8080/biblioteca/resources/autores');
-    // return [
-    //   {
-    //     id: 1,
-    //     nome: 'Paulo Coelho',
-    //     nacionalidade: 'brasileiro',
-    //     genero: Genero.MASCULINO,
-    //   },
-    //   {
-    //     id: 2,
-    //     nome: 'Clarice Lispector',
-    //     nacionalidade: 'ucraniana',
-    //     genero: Genero.FEMININO,
-    //   },
-    // ];
+    return this.httpClient.get<Autor[]>(this.API);
   }
+
+  remove(id: number) {
+    return this.httpClient.delete<void>(`${this.API}/${id}`);
+  }
+
 }
