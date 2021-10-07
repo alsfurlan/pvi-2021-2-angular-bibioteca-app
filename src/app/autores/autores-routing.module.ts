@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'cadastro',
     component: AutoresCadastroComponent,
+  },
+  {
+    path: 'edicao/:id',
+    component: AutoresCadastroComponent
   }
 ];
 

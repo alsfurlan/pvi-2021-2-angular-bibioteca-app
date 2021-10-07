@@ -22,6 +22,9 @@
       <td>{{ autor.nacionalidade }}</td>
       <td>{{ autor.genero }}</td>
       <td>
+        <button class="btn btn-outline-warning btn-sm mr-2" [routerLink]="['edicao', autor.id]">
+          Editar
+        </button>
         <button class="btn btn-outline-danger btn-sm" (click)="excluir(autor)">
           Excluir
         </button>

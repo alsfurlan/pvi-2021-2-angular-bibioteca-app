@@ -1,6 +1,6 @@
 <h1 class="mt-5 mb-4 text-center">Cadastro de Autores</h1>
 <hr />
-<form class="mt-4 mb-4">
+<form [formGroup]="autoresForm" (ngSubmit)="salvar()" class="mt-4 mb-4">
   <div class="form-group">
     <label for="nome">Nome</label>
     <input
@@ -8,6 +8,7 @@
       type="text"
       class="form-control"
       placeholder="Nome do autor"
+      formControlName="nome"
     />
   </div>
   <div class="form-group">
@@ -17,26 +18,41 @@
       type="text"
       class="form-control"
       placeholder="Nacionalidade"
+      formControlName="nacionalidade"
     />
   </div>
   <div class="form-group">
     <label>Gênero </label><br />
-    <div class="btn-group btn-group-toggle">
-      <label class="btn btn-outline-danger">
-        <input type="radio" value="FEMININO" /> Feminino
+    <div
+      class="btn-group btn-group-toggle"
+      ngbRadioGroup
+      formControlName="genero"
+    >
+      <label class="btn btn-outline-danger" ngbButtonLabel>
+        <input type="radio" value="FEMININO" ngbButton />
+        Feminino
       </label>
-      <label class="btn btn-outline-primary">
-        <input type="radio" value="MASCULINO" /> Masculino
+      <label class="btn btn-outline-primary" ngbButtonLabel>
+        <input type="radio" value="MASCULINO" ngbButton />
+        Masculino
       </label>
     </div>
   </div>
+  <hr />
+  <div class="row text-center mt-4">
+    <div class="offset-3 col-3">
+      <button
+        class="btn btn-primary btn-block"
+        type="submit"
+        [disabled]="!autoresForm.valid"
+      >
+        Salvar
+      </button>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-secondary btn-block" [routerLink]="['']">
+        Cancelar
+      </button>
+    </div>
+  </div>
 </form>
-<hr />
-<div class="row text-center mt-4">
-  <div class="offset-3 col-3">
-    <div class="btn btn-primary btn-block">Salvar</div>
-  </div>
-  <div class="col-3">
-    <div class="btn btn-secondary btn-block">Cancelar</div>
-  </div>
-</div>

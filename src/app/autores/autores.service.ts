@@ -21,4 +21,8 @@ export class AutoresService {
     return this.httpClient.delete<void>(`${this.API}/${id}`);
   }
 
+  save(autor: Autor) {
+    return this.httpClient.post<Autor>(this.API, autor);
+  }
+
 }
