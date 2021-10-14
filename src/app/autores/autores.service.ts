@@ -13,6 +13,10 @@ export class AutoresService {
     private httpClient: HttpClient,
   ) {}
 
+  findById(id: number) {
+    return this.httpClient.get<Autor>(`${this.API}/${id}`);
+  }
+
   findAll() {
     return this.httpClient.get<Autor[]>(this.API);
   }
@@ -21,8 +25,12 @@ export class AutoresService {
     return this.httpClient.delete<void>(`${this.API}/${id}`);
   }
 
-  save(autor: Autor) {
+  add(autor: Autor) {
     return this.httpClient.post<Autor>(this.API, autor);
+  }
+
+  update(id: number, autor: Autor) {
+    return this.httpClient.put<Autor>(`${this.API}/${id}`, autor);
   }
 
 }
