@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -9,6 +11,14 @@ const routes: Routes = [
   {
     path: 'livros',
     loadChildren: () => import('./livros/livros.module').then(m => m.LivrosModule)
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+  {
+    path: '**',
+    component: BemVindoComponent,
   }
 ];
 

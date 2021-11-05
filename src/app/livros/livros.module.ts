@@ -17,6 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LivrosRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+  ],
+  exports: [
+    LivrosComponent,
   ]
 })
 export class LivrosModule { }

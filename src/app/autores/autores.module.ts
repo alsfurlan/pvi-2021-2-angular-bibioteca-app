@@ -21,6 +21,9 @@ import { NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     NgbButtonsModule,
+  ],
+  exports: [
+    AutoresComponent,
   ]
 })
 export class AutoresModule { }
