@@ -1,0 +1,40 @@
+<h1 class="mt-5 mb-5">Livros</h1>
+<div class="mb-3 text-center">
+  <button class="btn btn-outline-primary btn-block" [routerLink]="['cadastro']">
+    <i class="bi bi-plus"></i>
+    Adicionar
+  </button>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Título</th>
+      <th>Subtítulo</th>
+      <th>Autores</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let livro of livros">
+      <td>{{ livro.id }}</td>
+      <td>{{ livro.titulo }}</td>
+      <td>{{ livro.subtitulo }}</td>
+      <td>
+        <ol>
+          <li *ngFor="let autor of livro.autores">
+            {{autor.nome}} ({{autor.id}})
+          </li>
+        </ol>
+      </td>
+      <td>
+        <button class="btn btn-outline-warning btn-sm mr-2" [routerLink]="['edicao', livro.id]">
+          Editar
+        </button>
+        <button class="btn btn-outline-danger btn-sm" (click)="excluir(livro)">
+          Excluir
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
