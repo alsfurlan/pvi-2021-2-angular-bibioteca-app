@@ -3,15 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { LivrosRoutingModule } from './livros-routing.module';
 import { LivrosComponent } from './livros.component';
+import { LivrosCadastroComponent } from './livros-cadastro/livros-cadastro.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    LivrosComponent
+    LivrosComponent,
+    LivrosCadastroComponent
   ],
   imports: [
     CommonModule,
-    LivrosRoutingModule
+    LivrosRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class LivrosModule { }

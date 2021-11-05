@@ -49,7 +49,7 @@ export class AutoresCadastroComponent implements OnInit {
         .subscribe(
           () => {
             alert('Autor atualizado com sucesso');
-            this.router.navigate(['']);
+            this.router.navigate(['./autores']);
           },
           () => alert('Erro ao atualizar o autor')
         );
@@ -57,7 +57,7 @@ export class AutoresCadastroComponent implements OnInit {
       this.autoresService.add(this.autoresForm.value).subscribe(
         () => {
           alert('Autor salvo com sucesso!');
-          this.router.navigate(['']);
+          this.router.navigate(['./autores']);
         },
         () => alert('Erro ao salvar o autor')
       );

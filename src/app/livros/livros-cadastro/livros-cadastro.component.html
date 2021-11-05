@@ -1,0 +1,47 @@
+<h1 class="mt-5 mb-4 text-center">Cadastro de Livros</h1>
+<hr />
+<form [formGroup]="livrosForm" (ngSubmit)="salvar()" class="mt-4 mb-4">
+  <div class="form-group">
+    <label for="nome">Título</label>
+    <input
+      id="titulo"
+      type="text"
+      class="form-control"
+      placeholder="Título do livro"
+      formControlName="titulo"
+    />
+  </div>
+  <div class="form-group">
+    <label for="subtitulo">Subtítulo</label>
+    <input
+      id="subtitulo"
+      type="text"
+      class="form-control"
+      placeholder="Subtítulo do livro"
+      formControlName="subtitulo"
+    />
+  </div>
+
+  <hr />
+
+  <div class="row text-center mt-4">
+    <div class="offset-3 col-3">
+      <button
+        class="btn btn-primary btn-block"
+        type="submit"
+        [disabled]="!livrosForm.valid"
+      >
+        Salvar
+      </button>
+    </div>
+    <div class="col-3">
+      <button
+        type="button"
+        class="btn btn-secondary btn-block"
+        [routerLink]="['/livros']"
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</form>
