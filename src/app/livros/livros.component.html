@@ -1,4 +1,4 @@
-<h1 class="mt-5 mb-5">Livros</h1>
+<h2 class="mt-5 mb-5">Livros</h2>
 <div class="mb-3 text-center">
   <button class="btn btn-outline-primary btn-block" [routerLink]="['cadastro']">
     <i class="bi bi-plus"></i>
@@ -23,7 +23,7 @@
       <td>
         <ol>
           <li *ngFor="let autor of livro.autores">
-            {{autor.nome}} ({{autor.id}})
+            {{autor.nome}}
           </li>
         </ol>
       </td>

@@ -1,3 +1,24 @@
 <section class="container">
+  <h1>Bem-vindo ao sistema da biblioteca!</h1>
+
+  <ul class="row">
+    <li class="col-md-4">
+      <a class="btn btn-primary btn-block btn-lg" [routerLink]="['/autores']"
+        >Autores</a
+      >
+    </li>
+
+    <li class="col-md-4">
+      <a class="btn btn-secondary btn-block btn-lg" [routerLink]="['/livros']">
+        Livros
+      </a>
+    </li>
+    <li class="col-md-4">
+      <a class="btn btn-success btn-block btn-lg" [routerLink]="['/dashboard']">
+        Dashboard</a
+      >
+    </li>
+  </ul>
+
   <router-outlet></router-outlet>
 </section>
